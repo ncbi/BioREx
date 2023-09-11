@@ -184,7 +184,7 @@ def load_pubtator_into_documents(in_pubtator_file,
                     _anno = AnnotationInfo(start, end-start, text, ne_type)
                     
                     #2234245	250	270	audiovisual toxicity	Disease	D014786|D006311
-                    ids = [x.strip('*') for x in re.split(re_id_spliter_str, _tks[5])]
+                    ids = [x for x in re.split(re_id_spliter_str, _tks[5])]
                     
                     # if annotation has groupID then update its id
                     if orig_ne_type == 'SequenceVariant':
@@ -1361,7 +1361,7 @@ if __name__ == '__main__':
         in_data_dir       = 'datasets/ncbi_relation/'
         out_data_dir      = 'datasets/ncbi_relation/processed/'
         has_end_tag       = True
-        re_id_spliter_str= r'[\,\;]'        
+        re_id_spliter_str= r'[\,\;]'
         normalized_type_dict = {'SequenceVariant':'GeneOrGeneProduct'}
         task_tag    = '[Litcoin]'
         
@@ -1373,7 +1373,32 @@ if __name__ == '__main__':
             re_id_spliter_str = re_id_spliter_str,
             normalized_type_dict = normalized_type_dict,
             task_tag = task_tag)
-                
+            
+    elif exp_option == 'biored_pred':
+        in_test_pubtator_file = options.in_pubtator_file
+        out_test_tsv_file     = options.out_tsv_file
+        has_end_tag           = True
+        re_id_spliter_str     = r'[\,\;]'
+        normalized_type_dict  = {'SequenceVariant':'GeneOrGeneProduct'}
+        task_tag    = '[Litcoin]'
+        
+        src_tgt_pairs = set(
+            [('ChemicalEntity', 'ChemicalEntity'),
+             ('ChemicalEntity', 'DiseaseOrPhenotypicFeature'),
+             ('ChemicalEntity', 'GeneOrGeneProduct'),
+             ('DiseaseOrPhenotypicFeature', 'GeneOrGeneProduct'),
+             ('GeneOrGeneProduct', 'GeneOrGeneProduct')])
+        
+        convert_pubtator_to_tsv_file(
+            in_pubtator_file = in_test_pubtator_file,
+            out_tsv_file     = out_test_tsv_file,
+            src_tgt_pairs    = src_tgt_pairs,
+            has_end_tag      = has_end_tag,
+            task_tag         = task_tag,
+            re_id_spliter_str= re_id_spliter_str,
+            normalized_type_dict = normalized_type_dict,
+            spacy_model      = spacy_model)
+    
     elif exp_option == 'ddi':
         in_data_dir       = 'datasets/ddi/'
         out_data_dir      = 'datasets/ddi/processed/'

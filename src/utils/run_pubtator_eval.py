@@ -27,9 +27,17 @@ parser.add_option('--exp_option',                     action="store",
 parser.add_option('--in_gold_tsv_file',               action="store",
                      dest="in_gold_tsv_file",         help="input gold tsv file",
                                                       default="")
+                                                      
+parser.add_option('--in_test_tsv_file',               action="store",
+                     dest="in_test_tsv_file",         help="input test tsv file",
+                                                      default="")
 
 parser.add_option('--in_pred_tsv_file',               action="store",
                      dest="in_pred_tsv_file",         help="input prediction tsv file",
+                                                      default="")
+                                                      
+parser.add_option('--in_test_pubtator_file',          action="store",
+                     dest="in_test_pubtator_file",    help="input pubtator file",
                                                       default="")
 
 parser.add_option('--out_bin_result_file',            action="store",
@@ -1538,3 +1546,16 @@ if __name__ == '__main__':
             out_bin_result_file    = out_bin_result_file,
             labels                 = labels,
             biored_eval_filter     = biored_eval_filter)
+            
+    elif exp_option == 'to_pubtator':
+        # litcoin + only evaluate five different relation pairs
+        in_test_pubtator_file    = options.in_test_pubtator_file
+        in_test_tsv_file         = options.in_test_tsv_file
+        in_pred_tsv_file         = options.in_pred_tsv_file
+        out_pred_pubtator_file   = options.out_pred_pubtator_file
+        
+        dump_pred_2_pubtator_file(in_pubtator_file       = in_test_pubtator_file,
+                                  in_gold_tsv_file       = in_test_tsv_file,
+                                  in_pred_tsv_file       = in_pred_tsv_file,
+                                  out_pubtator_pred_file = out_pred_pubtator_file,
+                                  labels                 = labels)
