@@ -46,11 +46,6 @@ bash scripts/run_biorex_exp.sh
 
 You can download the BioREx pre-trained model [BioREx model](https://ftp.ncbi.nlm.nih.gov/pub/lu/BioREx/pretrained_model.zip).
 
-You can run BioREx without training if you want to test on your own dataset only. Then replace the [BioRED's pubtator format](datasets/ncbi_relation/Test.PubTator) with your own dataset.
-
-In scripts/run_biorex_exp.sh, you have to replace the variable 'pre_train_model' and remove the parameter 'do_train' .
-
-
 ## Predicting New Data:
 
 If you only wish to use our tool for predicting new data without the need for training, please follow the steps outlined below:
