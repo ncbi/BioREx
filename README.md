@@ -42,9 +42,12 @@ microsoft/
 bash scripts/run_biorex_exp.sh
 ```
 
-## BioREx pre-trained model
+## BioREx pre-trained models
 
-You can download the BioREx pre-trained model [BioREx model](https://ftp.ncbi.nlm.nih.gov/pub/lu/BioREx/pretrained_model.zip).
+You can download the BioREx pre-trained models:
+
+* [BioREx BioLinkBERT model (Preferred)](https://ftp.ncbi.nlm.nih.gov/pub/lu/BioREx/pretrained_model_biolinkbert.zip), and this model is employed in [PubTator3 beta](https://www.ncbi.nlm.nih.gov/research/pubtator3/).
+* [BioREx PubMedBERT model (Original)](https://ftp.ncbi.nlm.nih.gov/pub/lu/BioREx/pretrained_model.zip) 
 
 ## Predicting New Data:
 
