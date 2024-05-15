@@ -48,7 +48,7 @@ Please replace the above <CUDA_VISIBLE_DEVICES> with your GPUs' IDs. Eg: '0,1' f
 For example
 
 ```
-bash scripts/run_test_pred.sh 0,1
+bash scripts/run_biorex_exp.sh 0,1
 ```
 
 
