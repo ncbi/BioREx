@@ -145,9 +145,9 @@ class DatasetProcessor(object):
         data_dict = {}
         try:
             if has_header:
-                data_df = pd.read_csv(data_file, sep='\t', dtype=str).fillna(np.str_(''))
+                data_df = pd.read_csv(data_file, sep='\t', dtype=str).fillna(np.str_('None'))
             else:
-                data_df = pd.read_csv(data_file, sep='\t', header=None, dtype=str).fillna(np.str_(''))
+                data_df = pd.read_csv(data_file, sep='\t', header=None, dtype=str).fillna(np.str_('None'))
             data_dict[self.label_name]   = [self._map_label(label) for label in data_df.iloc[:,self.label_column_id]]
             data_dict[self.text_name]    = data_df.iloc[:,self.text_column_id]
         

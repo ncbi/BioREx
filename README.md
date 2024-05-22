@@ -41,8 +41,17 @@ microsoft/
 ### Step 3: Train and evaluate
 
 ```
-bash scripts/run_biorex_exp.sh
+bash scripts/run_biorex_exp.sh <CUDA_VISIBLE_DEVICES>
 ```
+
+Please replace the above <CUDA_VISIBLE_DEVICES> with your GPUs' IDs. Eg: '0,1' for GPU devices 0 and 1.
+For example
+
+```
+bash scripts/run_biorex_exp.sh 0,1
+```
+
+
 
 ## BioREx pre-trained models
 

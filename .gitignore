@@ -11,3 +11,4 @@ __pycache__
 dstc7.egg-info/*
 *.ipynb
 \.spyproject/
+microsoft/*

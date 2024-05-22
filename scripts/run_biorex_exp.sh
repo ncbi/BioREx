@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cuda_visible_devices=0
+cuda_visible_devices=$1
 
 task_name="biorex"
 
