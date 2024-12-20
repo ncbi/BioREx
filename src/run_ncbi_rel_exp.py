@@ -39,9 +39,7 @@ from transformers import (
     AutoTokenizer,
     EvalPrediction,
     HfArgumentParser,
-    PreTrainedTokenizer,
     TFAutoModelForSequenceClassification,
-    TFTrainer,
     TFTrainingArguments,
 )
 

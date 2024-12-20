@@ -176,7 +176,7 @@ def load_pubtator_into_documents(in_pubtator_file,
                     index = _tks[1] + '|' + _tks[2]
                     text = _tks[3]
                     ne_type = _tks[4]
-                    ne_type = re.sub('\s*\(.*?\)\s*$', '', ne_type)
+                    ne_type = re.sub(r'\s*\(.*?\)\s*$', '', ne_type)
                     orig_ne_type = ne_type
                     if ne_type in normalized_type_dict:
                         ne_type = normalized_type_dict[ne_type]
