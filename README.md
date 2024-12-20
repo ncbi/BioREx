@@ -1,3 +1,5 @@
+[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fncbi%2Fbiorex&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
+
 ## Environment:
 
 * GPU: NVIDIA Tesla V100 SXM2
@@ -39,12 +41,24 @@ microsoft/
 ### Step 3: Train and evaluate
 
 ```
-bash scripts/run_biorex_exp.sh
+bash scripts/run_biorex_exp.sh <CUDA_VISIBLE_DEVICES>
 ```
 
-## BioREx pre-trained model
+Please replace the above <CUDA_VISIBLE_DEVICES> with your GPUs' IDs. Eg: '0,1' for GPU devices 0 and 1.
+For example
 
-You can download the BioREx pre-trained model [BioREx model](https://ftp.ncbi.nlm.nih.gov/pub/lu/BioREx/pretrained_model.zip).
+```
+bash scripts/run_biorex_exp.sh 0,1
+```
+
+
+
+## BioREx pre-trained models
+
+You can download the BioREx pre-trained models:
+
+* [BioREx BioLinkBERT model (Preferred)](https://ftp.ncbi.nlm.nih.gov/pub/lu/BioREx/pretrained_model_biolinkbert.zip) is utilized in the beta version of [PubTator3](https://www.ncbi.nlm.nih.gov/research/pubtator3/).
+* [BioREx PubMedBERT model (Original)](https://ftp.ncbi.nlm.nih.gov/pub/lu/BioREx/pretrained_model.zip) 
 
 ## Predicting New Data:
 
