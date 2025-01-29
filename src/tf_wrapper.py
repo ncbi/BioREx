@@ -103,13 +103,13 @@ class TFTrainer:
         else:
             self.tb_writer = tf.summary.create_file_writer(self.args.logging_dir)
 
-        if is_wandb_available():
+        '''if is_wandb_available():
             self.setup_wandb()
         elif os.getenv("WANDB_DISABLED", "").upper() not in ENV_VARS_TRUE_VALUES:
             logger.info(
                 "You are instantiating a Trainer but W&B is not installed. To use wandb logging, "
                 "run `pip install wandb; wandb login` see https://docs.wandb.com/huggingface."
-            )
+            )'''
 
         if is_comet_available():
             self.setup_comet()
@@ -382,8 +382,8 @@ class TFTrainer:
                     tf.summary.scalar(k, v, step=self.global_step)
             self.tb_writer.flush()
 
-        if is_wandb_available():
-            wandb.log(logs, step=self.global_step)
+        '''if is_wandb_available():
+            wandb.log(logs, step=self.global_step)'''
 
         if is_comet_available():
             experiment = comet_ml.config.get_global_experiment()
