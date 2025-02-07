@@ -908,7 +908,7 @@ class TFTrainerWrapper(TFTrainer):
             self.tb_writer.flush()
 
             logger.info("***** Running training *****")
-            logger.info("========>self.model.layers[0].variables[0].device", self.model.layers[0].variables[0].device)
+            #logger.info("========>self.model.layers[0].variables[0].device", self.model.layers[0].variables[0].device)
             logger.info("  Num examples = %d", self.num_train_examples)
             # TODO: We might want to print a more precise ``epochs`` if self.args.max_steps > 0 ?
             logger.info("  Num Epochs = %d", epochs)
