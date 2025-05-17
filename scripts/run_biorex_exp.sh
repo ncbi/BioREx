@@ -25,9 +25,9 @@ cuda_visible_devices=$cuda_visible_devices python src/run_ncbi_rel_exp.py \
   --to_add_tag_as_special_token true \
   --model_name_or_path "${pre_train_model}" \
   --output_dir "biorex_model" \
-  --num_train_epochs 1 \
-  --per_device_train_batch_size 4 \
-  --per_device_eval_batch_size 4 \
+  --num_train_epochs 10 \
+  --per_device_train_batch_size 16 \
+  --per_device_eval_batch_size 32 \
   --do_train \
   --do_predict \
   --logging_steps 10 \
