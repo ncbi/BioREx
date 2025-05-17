@@ -1,10 +1,10 @@
 #!/bin/bash
-
+ 
 in_pubtator_file="input.pubtator"
 out_tsv_file="out_processed.tsv"
 out_pubtator_file="predict.pubtator"
 
-pre_train_model="pretrained_model"
+pre_train_model="pretrained_model_biolinkbert"
 
 echo 'Converting the dataset into BioREx input format'
 
